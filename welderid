@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welder Qualification Lookup</title>
+    <script>
+        function lookupWelder() {
+            var welderId = document.getElementById("welderId").value;
+            var qualifications = {
+                "001": "AWS D1.1, API 1104",
+                "002": "ASME IX, AWS D1.1",
+                // Add other welder IDs and qualifications here
+            };
+            
+            if (qualifications[welderId]) {
+                document.getElementById("result").innerHTML = 
+                    "Welder ID: " + welderId + "<br>" + 
+                    "Qualifications: " + qualifications[welderId];
+            } else {
+                document.getElementById("result").innerHTML = 
+                    "Welder ID not found.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Welder ID to Lookup Qualifications</h2>
+    <input type="text" id="welderId" placeholder="Enter Welder ID">
+    <button onclick="lookupWelder()">Submit</button>
+    <div id="result"></div>
+</body>
+</html>
